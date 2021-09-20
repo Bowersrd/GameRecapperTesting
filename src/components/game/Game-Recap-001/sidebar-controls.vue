@@ -1,6 +1,6 @@
 <template>
-    <form id="form-wrapper" @submit.prevent="test">
-        <div id="form-container">
+    <form class="form-wrapper" @submit.prevent="test">
+        <div class="form-container">
             <div class="form-header">
                 <span class="form-header__text">Recap Setup</span>
             </div>
@@ -199,70 +199,4 @@ $secondary-color: #0e0f17;
 $white: #eee;
 $gray: #c9cccc;
 $highlight: #feb91f;
-
-#form-wrapper {
-    min-width: 42rem;
-    width: 42rem;
-    height: 100vh;
-    background: $white;
-    border-right: 2px solid $gray;
-    overflow: auto;
-}
-
-#form-container {
-    width: 100%;
-    text-align: left;
-    font-size: 1.4rem;
-    color: $primary-color;
-}
-
-.form-row {
-    width: 100%;
-    margin-bottom: 2rem;
-    padding: 0 2rem;
-    &--flex {
-        display: flex;
-    }
-    &__label {
-        font-weight: 500;
-        margin: 0.5rem 0;
-        display: block;
-    }
-    &__image {
-        max-height: 20rem;
-        margin-top: 1rem;
-    }
-    &__input {
-        background: $white;
-        border: 1px solid $gray;
-        padding: 0.75rem 1rem;
-        width: 100%;
-        font-size: 1.4rem;
-        margin: 0.25rem 0;
-        &--small {
-            width: calc(100% / 3.5);
-        }
-        &--center {
-            text-align: center;
-        }
-    }
-    &__split {
-        width: 50%;
-        &:first-of-type {
-            margin-right: 1rem;
-        }
-    }
-}
-
-.form-header {
-    background: #dedede;
-    padding: 0.75rem 2rem;
-    border-top: 1px solid $gray;
-    border-bottom: 1px solid $gray;
-    margin-bottom: 1rem;
-    &__text {
-        font-weight: 500;
-        text-transform: uppercase;
-    }
-}
 </style>

@@ -149,6 +149,8 @@ $highlight: #feb91f;
     justify-content: center;
     padding-top: 4rem;
     align-self: center;
+    background-size: cover;
+    background-position: center;
 }
 
 #bg-gradient {
@@ -307,6 +309,7 @@ $highlight: #feb91f;
             text-transform: uppercase;
             font-size: 1.8rem;
             transform: rotate(-90deg);
+            font-weight: 500;
         }
         &:last-child span {
             transform: rotate(90deg);

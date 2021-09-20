@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Zuume';
+    src: url('/assets/fonts/Zuume/Zuume-Bold.woff2') format('woff2'),
+        url('/assets/fonts/Zuume/Zuume-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zuume';
+    src: url('/assets/fonts/Zuume/Zuume-LightItalic.woff2') format('woff2'),
+        url('/assets/fonts/Zuume/Zuume-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
