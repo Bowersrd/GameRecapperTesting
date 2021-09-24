@@ -9,13 +9,14 @@
                 @updateImage="updateImage($event)"
                 @updateCustomTeam="updateCustomTeam($event)"
                 @updateTextures="updateTextures($event)"
+                @updateFlipped="updateFlipped($event)"
             ></sidebar-controls>
         </div>
         <div class="content">
             <div id="graphic">
-                <div id="graphic__image" :style="{ backgroundImage: `url('${backgroundImage}')`, backgroundPosition: `${backgroundPos.x}px ${backgroundPos.y}px` }"></div>
+                <div id="graphic__image" :style="{ backgroundImage: `url('${backgroundImage}')`, backgroundPosition: `${backgroundPos.x}px ${backgroundPos.y}px`, order: flipped ? 1 : 0, boxShadow: flipped ? 'inset 10px 0 9px -7px rgba(0,0,0,0.7)' : 'inset -10px 0 9px -7px rgba(0,0,0,0.7)' }"></div>
                 <div id="graphic__texture" :style="{ backgroundImage: 'url(' + require(`@/assets/images/graphics/002/${textures.image}.jpg`) + ')', opacity: textures.strength }"></div>
-                <div id="graphic__alert">
+                <div id="graphic__alert" :style="[flipped ? { right: '43%' } : { left: '43%' }]">
                     <h1 class="graphic-headline" :style="[alert.length <= 11 ? {fontSize: '5rem'} : {fontSize: '4rem'}]">{{ alert }}</h1>
                 </div>
                 <div id="graphic__content" :style="{ backgroundColor: custom.use ? custom.primaryColor : currentTeam.primaryColor }">
@@ -32,7 +33,7 @@
                         <h1 id="player__last" :style="[player.lastName.length <= 9 ? {fontSize: '11rem'} : {fontSize: '9.5rem'}]">{{ player.lastName }}</h1>
                     </div>
                 </div>
-                <div id="image-control">
+                <div id="image-control" :style="[flipped ? { right: '2rem' } : { left: '2rem' }]">
                     <font-awesome-icon id="image-control--up" :icon="['fas', 'arrow-up']" @click="backgroundPos.y -= 10" />
                     <font-awesome-icon id="image-control--right" :icon="['fas', 'arrow-right']" @click="backgroundPos.x += 10" />
                     <font-awesome-icon id="image-control--left" :icon="['fas', 'arrow-left']" @click="backgroundPos.x -= 10" />
@@ -53,6 +54,7 @@ export default {
     },
     data() {
         return {
+            flipped: false,
             backgroundImage: null,
             backgroundPos: {
                 x: 0,
@@ -103,6 +105,9 @@ export default {
         updateTextures(textures) {
             this.textures.strength = textures.strength * 0.01;
             this.textures.image = textures.image;
+        },
+        updateFlipped(flipped) {
+            this.flipped = flipped;
         }
     },
     computed: {
@@ -146,13 +151,11 @@ export default {
         background-position: -42rem 0;
         background-repeat: no-repeat;
         filter: grayscale(100%);
-        box-shadow: inset -10px 0 9px -7px rgba(0,0,0,0.7);
     }
     &__alert {
         position: absolute;
         z-index: 998;
         top: 42%;
-        left: 43%;
         width: 28rem;
         height: 9rem;
         background-image: linear-gradient(#fff, #ddd);
@@ -263,7 +266,6 @@ export default {
     font-size: 2rem;
     height: 5rem;
     top: 2rem;
-    left: 2rem;
     cursor: pointer;
     &--up {
         position: relative;

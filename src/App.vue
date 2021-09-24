@@ -194,6 +194,18 @@ body {
             margin-right: 1rem;
         }
     }
+    &__button {
+      border: 1px solid $color-primary-4;
+      background: $color-primary-light;
+      padding: .5rem 2rem;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+      &:hover {
+        background: $color-primary-4;
+        color: $color-primary-light;
+      }
+    }
 }
 
 .form-header {

@@ -30,6 +30,11 @@ const routes = [
     name: 'Player Graphic 002',
     component: () => import('@/views/graphics/Player-Graphic-002/index.vue')
   },
+  {
+    path: '/graphics/trade/001',
+    name: 'Trade Graphic 001',
+    component: () => import('@/views/graphics/Trade-Graphic-001/index.vue')
+  },
 ]
 
 const router = new VueRouter({

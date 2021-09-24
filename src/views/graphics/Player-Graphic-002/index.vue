@@ -23,7 +23,7 @@ export default {
             domtoimage.toJpeg(document.getElementById('graphic'), {filter: this.filter, style: { opacity: 1 }}, { quality: 1 })
             .then(function (dataUrl) {
                 var link = document.createElement('a');
-                link.download = 'Game Recap.jpeg';
+                link.download = 'Player Graphic 002.jpeg';
                 link.href = dataUrl;
                 link.click();
             });

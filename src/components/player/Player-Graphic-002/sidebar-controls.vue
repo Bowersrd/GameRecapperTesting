@@ -74,6 +74,10 @@
             <label class="form-row__label" for="title">Texture Opacity ({{ textures.strength }}%) - Default is 40%</label>
             <input class="form-row__slider" type="range" min="0" max="100" v-model="textures.strength" @change="$emit('updateTextures', textures)">
         </div>
+        <div class="form-row">
+            <label class="form-row__label" for="team">Flip Graphic Sides?</label>
+            <input type="checkbox" v-model="flipped" @change="$emit('updateFlipped', flipped)">
+        </div> 
     </div>
 </template>
 
@@ -81,6 +85,7 @@
 export default {
     data() {
         return {
+            flipped: false,
             backgroundImage: null,
             team: 0,
             player: {
