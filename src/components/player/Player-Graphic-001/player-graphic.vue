@@ -148,12 +148,6 @@ export default {
 @import "@/assets/scss/main.scss";
 @import "@/assets/fonts/Zuume/_Zuume.scss";
 
-.content-wrapper {
-    width: 100%;
-    height: calc(100vh - 8rem);
-    display: flex;  
-}
-
 #graphic {
     position: relative;
     width: 128rem;

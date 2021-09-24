@@ -12,7 +12,7 @@
           <router-link to="/recaps/game/001" exact class="nav-bar__link">Recaps</router-link>
         </li>
         <li class="nav-bar__item">
-          <router-link to="/graphics/player/001" exact class="nav-bar__link">Player Graphic</router-link>
+          <router-link to="/graphics/" class="nav-bar__link">Graphics</router-link>
         </li>
       </ul>
     </nav>
@@ -44,6 +44,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: $color-primary-gray;
+}
+
 .nav-bar {
   position: relative;
   width: 100%;
@@ -55,7 +59,7 @@ html {
   align-items: center;
   position: fixed;
   box-shadow: 0px 0px 6px 0px $color-primary-4;
-  z-index: 999;
+  z-index: 9999;
   &__logo {
     margin-left: 3rem;
     & img {
@@ -86,7 +90,9 @@ html {
 }
 
 .section {
+  position: relative;
   width: 100%;
+  height: 100vh;
   display: flex;
   padding-top: 8rem;
 }
@@ -97,23 +103,28 @@ html {
   flex: 1 1 auto;
   justify-content: space-around;
   align-items: center;
-  background: $color-primary-light;
+  padding: 0 3rem;
+  background: $color-primary-gray;
+}
+
+.content-wrapper {
+    width: 100%;
+    height: calc(100vh - 8rem);
+    display: flex;  
 }
 
 .btn {
-  width: 20rem;
-  height: 5rem;
+  padding: 1.5rem 4rem;
   font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: 500;
-  background: transparent;
-  color: $color-primary-0;
-  border: 2px solid $color-primary-0;
+  background: $color-primary-4;
+  color: $color-primary-light;
+  border: 2px solid $color-primary-4;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
-    color: $color-primary-light;
-    background: $color-primary-0;
+    background: $color-primary-1;
   }
 }
 
@@ -196,5 +207,12 @@ html {
         font-weight: 500;
         text-transform: uppercase;
     }
+}
+
+.form-action {
+  margin: 3rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 </style>

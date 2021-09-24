@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Zuume';
-    src: asset-url('/assets/fonts/Zuume/Zuume-Bold.woff2') format('woff2'),
-    asset-url('/assets/fonts/Zuume/Zuume-Bold.woff') format('woff'),
-    asset-url('/assets/fonts/Zuume/Zuume-Bold.ttf') format('truetype');
+    src: url('~@/assets/fonts/Zuume/Zuume-Bold.woff2') format('woff2'),
+         url('~@/assets/fonts/Zuume/Zuume-Bold.woff') format('woff'),
+         url('~@/assets/fonts/Zuume/Zuume-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -10,9 +10,9 @@
 
 @font-face {
     font-family: 'Zuume';
-    src: asset-url('/assets/fonts/Zuume/Zuume-LightItalic.woff2') format('woff2'),
-    asset-url('/assets/fonts/Zuume/Zuume-LightItalic.woff') format('woff'),
-    asset-url('/assets/fonts/Zuume/Zuume-Bold.ttf') format('truetype');
+    src: url('~@/assets/fonts/Zuume/Zuume-LightItalic.woff2') format('woff2'),
+         url('~@/assets/fonts/Zuume/Zuume-LightItalic.woff') format('woff'),
+         url('~@/assets/fonts/Zuume/Zuume-Bold.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
     font-display: swap;

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import playerGraphic from '@/components/player/Player-Graphic-001/player-graphic.vue';
+import playerGraphic from '@/components/player/Player-Graphic-002/player-graphic.vue';
 
 import domtoimage from 'dom-to-image';
 

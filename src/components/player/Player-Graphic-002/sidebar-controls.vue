@@ -15,8 +15,12 @@
             </select>
         </div>
         <div class="form-row">
-            <label class="form-row__label" for="title">Graphic Headline</label>
-            <input class="form-row__input" type="text" placeholder="Player of the Week" v-model.lazy="title" @change="$emit('updateTitle', title)">
+            <label class="form-row__label" for="alert">Graphic Headline</label>
+            <input class="form-row__input" type="text" placeholder="Breaking, Alert, Etc." v-model.lazy="alert" @change="$emit('updateAlert', alert)">
+        </div>
+        <div class="form-row">
+            <label class="form-row__label" for="alert">Graphic Action</label>
+            <input class="form-row__input" type="text" placeholder="Re-Signing, Cut, Etc." v-model.lazy="action" @change="$emit('updateAction', action)">
         </div>
         <div class="form-row">
             <label class="form-row__label" for="team">Use Custom Team?</label>
@@ -53,20 +57,22 @@
             <label class="form-row__label" for="title">Last Name</label>
             <input class="form-row__input" type="text" placeholder="Mahomes" v-model.lazy="player.lastName" @change="$emit('updatePlayer', player)">
         </div>
-        <div class="form-row">
-            <label class="form-row__label" for="title">Stat Line</label>
-            <input class="form-row__input" type="text" placeholder="24/37, 378 Yds, 4 TD, 5 Rush Att, 32 Yds" v-model.lazy="player.statLine" @change="$emit('updatePlayer', player)">
-        </div>
         <div class="form-header">
             <span class="form-header__text">Additional Controls</span>
         </div>
         <div class="form-row">
-            <label class="form-row__label" for="title">Texture Opacity ({{ textures.texture }}%) - Default is 35%</label>
-            <input class="form-row__slider" type="range" min="0" max="100" v-model="textures.texture" @change="$emit('updateTextures', textures)">
+            <label class="form-row__label" for="team">Choose Texture</label>
+            <select class="form-row__input" name="texture" v-model="textures.image" @change="$emit('updateTextures', textures)">
+                <option :value="0">Texture 1</option>
+                <option :value="1">Texture 2</option>
+                <option :value="2">Texture 3</option>
+                <option :value="3">Texture 4</option>
+                <option :value="4">Texture 5</option>
+            </select>
         </div>
         <div class="form-row">
-            <label class="form-row__label" for="title">Accent Opacity ({{ textures.accent }}%) - Default is 75%</label>
-            <input class="form-row__slider" type="range" min="0" max="100" v-model="textures.accent" @change="$emit('updateTextures', textures)">
+            <label class="form-row__label" for="title">Texture Opacity ({{ textures.strength }}%) - Default is 40%</label>
+            <input class="form-row__slider" type="range" min="0" max="100" v-model="textures.strength" @change="$emit('updateTextures', textures)">
         </div>
     </div>
 </template>
@@ -79,19 +85,19 @@ export default {
             team: 0,
             player: {
                 firstName: '',
-                lastName: '',
-                statLine: ''
+                lastName: ''
             },
-            title: 'Player of the Game',
+            alert: 'Breaking',
+            action: 'Re-Signing',
             custom: {
                 use: false,
                 logo: null,
-                primaryColor: '#cccccc',
+                primaryColor: '#aaaaaa',
                 secondaryColor: '#111111'
             },
             textures: {
-                texture: 35,
-                accent: 75
+                strength: 40,
+                image: 0
             }
         }
     },

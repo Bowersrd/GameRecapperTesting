@@ -16,9 +16,19 @@ const routes = [
     component: () => import('@/views/recaps/Game-Recap-001/index.vue')
   },
   {
+    path: '/graphics/',
+    name: 'Graphics Home',
+    component: () => import('@/views/graphics/index.vue')
+  },
+  {
     path: '/graphics/player/001',
     name: 'Player Graphic 001',
     component: () => import('@/views/graphics/Player-Graphic-001/index.vue')
+  },
+  {
+    path: '/graphics/player/002',
+    name: 'Player Graphic 002',
+    component: () => import('@/views/graphics/Player-Graphic-002/index.vue')
   },
 ]
 
