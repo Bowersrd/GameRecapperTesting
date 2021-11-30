@@ -141,7 +141,6 @@ export default {
         top: .875rem;
         left: 1.15rem;
         z-index: 998;
-        border: 2px solid #222;
     }
     &__image {
         position: relative;
@@ -262,7 +261,7 @@ export default {
 #image-control {
     color: #fff;
     position: absolute;
-    z-index: 9999;
+    z-index: 999;
     font-size: 2rem;
     height: 5rem;
     top: 2rem;

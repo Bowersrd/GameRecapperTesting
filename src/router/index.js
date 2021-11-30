@@ -35,6 +35,11 @@ const routes = [
     name: 'Trade Graphic 001',
     component: () => import('@/views/graphics/Trade-Graphic-001/index.vue')
   },
+  {
+    path: '/graphics/ranking/001',
+    name: 'Ranking Graphic 001',
+    component: () => import('@/views/graphics/Ranking-Graphic-001/index.vue')
+  },
 ]
 
 const router = new VueRouter({

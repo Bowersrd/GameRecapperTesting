@@ -61,7 +61,7 @@ export default {
         width: 100%;
     }
     &__button {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 }   
 </style>

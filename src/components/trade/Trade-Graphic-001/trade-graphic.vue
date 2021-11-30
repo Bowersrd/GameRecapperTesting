@@ -23,7 +23,7 @@
                 <div class="trade-container" :style="{ backgroundColor: lTeam.color === 'neutral' ? '#222' : getColor(leftTeam[lTeam.color]) }">
                     <img class="trade-container__image" :src="lTeam.backgroundImage" alt="" :style="{ left: `${lTeam.backgroundPos.x}px`, top: `${lTeam.backgroundPos.y}px`}"  v-if="lTeam.backgroundImage">
                     <div class="team-info">
-                        <div class="team-info__team">{{ leftTeam.mascot }} Recieve:</div>
+                        <div class="team-info__team">{{ leftTeam.mascot }} receive:</div>
                         <div class="team-info__players">
                             <span class="team-info__player" v-for="(player, index) in lTeam.players" :key="player.id">{{ lTeam.players[index].player }}</span>
                         </div>
@@ -35,7 +35,7 @@
                 <div class="trade-container" :style="{ backgroundColor: rTeam.color === 'neutral' ? '#222' : getColor(rightTeam[rTeam.color]) }">
                     <img class="trade-container__image" :src="rTeam.backgroundImage" alt="" :style="{ left: `${rTeam.backgroundPos.x}px`, top: `${rTeam.backgroundPos.y}px`}" v-if="rTeam.backgroundImage">
                     <div class="team-info">
-                        <div class="team-info__team">{{ rightTeam.mascot }} Recieve:</div>
+                        <div class="team-info__team">{{ rightTeam.mascot }} receive:</div>
                         <div class="team-info__players">
                             <span class="team-info__player" v-for="(player, index) in rTeam.players" :key="player.id">{{ rTeam.players[index].player }}</span>
                         </div>
@@ -182,6 +182,8 @@ export default {
     position: relative;
     width: 128rem;
     height: 72rem;
+    min-width: 128rem;
+    min-height: 72rem;
     background: #eee;
     display: flex;
     padding: 1.5rem;
@@ -272,7 +274,7 @@ export default {
 .image-control {
     color: #fff;
     position: absolute;
-    z-index: 9999;
+    z-index: 999;
     font-size: 2rem;
     height: 5rem;
     top: 2.5rem;

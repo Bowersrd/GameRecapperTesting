@@ -152,6 +152,8 @@ export default {
     position: relative;
     width: 128rem;
     height: 72rem;
+    min-width: 128rem;
+    min-height: 72rem;
     background: gray;
     display: flex;
     justify-content: flex-end;
