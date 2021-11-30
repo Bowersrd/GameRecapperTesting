@@ -6,7 +6,7 @@
         <div class="form-row">
             <label class="form-row__label" for="background">League Logo</label>
             <input type="file" accept="image/*" @change="handleImage" ref="fileInput">
-            <!-- <img class="form-row__image" :src="lTeam.backgroundImage" alt="Image of background" v-show="lTeam.backgroundImage"> -->
+            <img class="form-row__image" :src="logo" alt="Image of League Logo" v-show="logo">
         </div>
         <div class="form-row form-row--flex" v-for="index in 10" :key="index">
             <div class="form-row__split">
@@ -96,8 +96,8 @@ export default {
         createBase64Image(image) {
             const reader = new FileReader();
             reader.onload = (e) => {
-                this.lTeam.backgroundImage = e.target.result;
-                this.$emit('updateLeftImage', e.target.result);
+                this.logo = e.target.result;
+                this.$emit('updateLogo', e.target.result);
             };
             reader.readAsDataURL(image);
         }

@@ -2,6 +2,7 @@
     <div class="content-wrapper">
         <div class="form-wrapper">
             <sidebar-controls
+                @updateLogo="updateLogo($event)"
                 @updateTeams="updateTeams($event)"
                 @updateBorder="updateBorder($event)"
             ></sidebar-controls>
@@ -11,7 +12,7 @@
                 <img src="@/assets/images/graphics/ranking-001/yard-lines.png" alt="Yard line markers for visual appeal" class="graphic-header__yard">
                 <div class="graphic-header">
                     <p class="graphic-header__title">Power</p>
-                    <img src="@/assets/images/vendors/neonsportz_logo.png" alt="League logo" class="graphic-header__logo">
+                    <img :src="logo || require(`@/assets/images/logos/nfl.png`)" alt="League logo" class="graphic-header__logo">
                     <p class="graphic-header__title">Rankings</p>
                 </div>
                 <div class="teams-container">
@@ -38,6 +39,7 @@ export default {
     },
     data() {
         return {
+            logo: null,
             teams: [
                 {
                     id: 13,
@@ -91,6 +93,9 @@ export default {
             var hex2rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
             const result = {r: parseInt(hex2rgb[1], 16), g: parseInt(hex2rgb[2], 16), b: parseInt(hex2rgb[3], 16)};
             return `rgba(${result.r},${result.g},${result.b},1)`
+        },
+        updateLogo(logo) {
+            this.logo = logo;
         },
         updateTeams(teams) {
             this.teams = teams;
